@@ -1,0 +1,91 @@
+<!-- Put this file under ~/public_html and link from /var/www/html
+ URL is under http://192.168.0.133/ -->
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            background-color: #312e1d;
+            font-family: tahoma, sans-serif;
+        }
+        
+        #content {
+            margin: 20px auto;
+            width: 600px;
+            background-color: #f8f8f8;
+            padding: 20px 10px;
+            border: solid 3px black;
+        }
+        
+        h1 {
+            font-size: 120%;
+        }
+        
+        input[type=text], textarea {
+            width: 400px;
+        }
+        
+        tr.label {
+            vertical-align: top;
+        }
+    </style>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+</head>
+
+<body>
+
+<div id="content">
+    <h1> Input results of your run </h1>
+    <form method="post" action="cgi-bin/input_run_results.py">
+    <table>
+        <tr>
+            <td class="label">Runner</td>
+            <td class="form">
+              <select name="runner">
+                <option value="">-- Select Runner --</option>
+                <option value="Jacob">Jacob</option>
+                <option value="Benny">Benny</option>
+                <option value="Hershey">Hershey</option>
+             </td>
+        </tr>
+        <tr>  
+            <td class="label">Date</td>  
+            <td class="form">
+                <input name = "Date" type ="text" id="datepicker" /> 
+            </td>       
+        </tr>
+
+        <tr>
+            <td class="label">Run time mm:ss</td>
+            <td class="form"><input name="time" type="text" /></td>
+        </tr>
+
+        <tr valign="top">
+            <td class="label">Comments</td>
+            <td class="form">
+                <textarea cols="30" rows="5" name="comment" class="default"></textarea>
+            </td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><input type="submit" name="submit" value=" Send " /></td>
+        </tr>
+      </table>
+    </form>
+</div>
+
+</body>
+</html>
