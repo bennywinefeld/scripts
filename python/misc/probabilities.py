@@ -17,7 +17,7 @@ def tossCoin(N):
 
 numOfTosses = []
 orelRatio = []
-for N in range(1,10000,5):
+for N in range(1, 100, 5):
     numOfTosses.append(N)
     orelRatio.append(float(tossCoin(N))/N)
     #print N," tosses", orelRatio, " orlov"
@@ -25,9 +25,6 @@ for N in range(1,10000,5):
 plt.plot([0,N],[0.5,0.5],'r',numOfTosses,orelRatio,'b')
 plt.ylabel('Orel ratio')
 plt.show()
-
-
-
 
 # evenly sampled time at 200ms intervals
 t = np.arange(0., 5., 0.2)
@@ -37,6 +34,5 @@ lines = plt.plot(t, t, 'r-', t, t**2, 'bs', t, t**3, 'g^')
 # Set color of all graphs to green
 plt.setp(lines, color='g', linewidth=2.0)
 
-random.randint(a, b)
 
 plt.show()
