@@ -7,9 +7,24 @@ def fib(n):
         x,y = y, x+y
     return y
 
-x = 6
+x = 3
 print('fib({:d})={:d}'.format(x,fib(x)))
 
+# Generate fibonaccy sequence with yield generator
+def seqGen(x=0,y=1,len=5):
+    for i in range(len): 
+        x,y = y, x+y
+        yield y
+
+print([z for z in seqGen()])
+
+def myFunc(n):
+    if n==1:
+        return 1
+    else:
+        return n*myFunc(n-1)
+
+print(myFunc(4))
 
 def sumOfList(myList):
     total = 0
@@ -17,8 +32,10 @@ def sumOfList(myList):
         total += x
     return(total)
 
+
+
 # Need to find a sum of all list elements and multiply it by 2
-winsound.Beep(440, 250) # frequency, duration
+#winsound.Beep(440, 250) # frequency, duration
 
 
 
